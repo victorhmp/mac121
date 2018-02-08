@@ -1,0 +1,46 @@
+Crie o diretório ~/JARs
+
+Copie commons-lang3-3.4.jar para o diretório ~/JARs
+
+Os comandos javac-introcs e java-introcs devem ser levemente alterados.  Substitua a versão atual pelas versões abaixo.
+
+Observação: javac-introcs e java-introcs devem estar em /usr/local/bin
+
+
+#!/bin/bash
+
+# *************************************************
+# java-introcs
+# Hayk Martirosyan
+# -------------------
+# Wrapper for java that includes introcs libraries.
+# *************************************************
+
+# This must match the install directory
+INSTALL=~/introcs
+JAR=~/JARs
+
+# Sets the path to the classpath libraries
+jars=(.:${INSTALL}/stdlib.jar:${INSTALL}/java3d/j3dcore.jar:${INSTALL}/java3d/j3dutils.jar:${INSTALL}/java3d/vecmath.jar:${INSTALL}/java3d/gluegen-rt.jar:${INSTALL}/java3d/jogl.jar:${JAR}/commons-lang3-3.4.jar)
+
+java -cp "$jars" "$@"
+
+
+
+#!/bin/bash
+
+# *************************************************
+# javac-introcs
+# Hayk Martirosyan
+# -------------------
+# Wrapper for javac that includes introcs libraries.
+# *************************************************
+
+# This must match the install directory
+INSTALL=~/introcs
+JAR=~/JARs
+
+# Sets the path to the classpath libraries
+jars=(.:${INSTALL}/stdlib.jar:${INSTALL}/java3d/j3dcore.jar:${INSTALL}/java3d/j3dutils.jar:${INSTALL}/java3d/vecmath.jar:${INSTALL}/java3d/gluegen-rt.jar:${INSTALL}/java3d/jogl.jar:${JAR}/commons-lang3-3.4.jar)
+
+javac -cp "$jars" -g -encoding UTF-8 "$@"

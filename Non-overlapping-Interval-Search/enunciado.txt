@@ -1,0 +1,58 @@
+Non-overlapping interval search
+
+Faça o Web Exercise 3.5.6, Non-overlapping interval search, de Algs4:
+
+https://algs4.cs.princeton.edu/35applications/
+
+Esse exercício também aparece como Creative Exercise 4.4.7 em
+
+https://introcs.cs.princeton.edu/python/44st/
+
+Você deve fazer esse exercício como um exercício de árvores binárias de busca simples (não-balanceadas). Você deve usar a tabela de símbolos implementada em BST.java (e não a tabela em ST.java). (Seu programa será executado com o BST.java de S&W e portanto não inclua BST.java em sua entrega.)
+
+O conjunto de intervalos deve ser dado em um arquivo, cujo nome será dado como argumento de linha de comando. Seu programa deve ler esses intervalos, e deve então ler uma sequência de inteiros na entrada padrão. Para cada inteiro lido na entrada padrão, seu programa deve enviar para a saída padrão o intervalo a que pertence o inteiro dado. Não é necessário implementar uma função como especificado nos enunciados de S&W.
+
+Seu programa deve chamar-se LocateBST.java. Considere os arquivos de dados abaixo. Seu programa será executado com esses dados (e muitos outros conjuntos de dados), da seguinte forma:
+
+$ java-introcs LocateBST intervals.in < ex_stdin.in
+9122: [8999, 10332]
+8122: between [5532, 7643] & [8999, 10332]
+5532: [5532, 7643]
+1600: left of [1643, 2033]
+5669321: [5666653, 5669321]
+5669322: right of [5666653, 5669321]
+
+A saída de seu programa deve ser exatamente como exemplificado acima.
+
+Você pode gerar mais instâncias para testes com os programas RandomIntervals.java e RandomIns.java abaixo.
+
+$ java-introcs RandomIntervals 500 100 20 > 500.100.20.in
+$ java-introcs RandomInts 10 10000 | java-introcs LocateBST 500.100.20.in
+3275: [2439, 3297]
+4945: [4802, 5004]
+3961: [3710, 4209]
+5087: between [4802, 5004] & [5124, 5886]
+1116: [97, 1181]
+1841: [1421, 2027]
+8336: [7573, 8377]
+4793: between [4647, 4718] & [4802, 5004]
+2339: [2327, 2362]
+9844: [9420, 11015]
+$ java-introcs RandomIntervals 200 100 500000 > 200.100.500000.in
+$ java-introcs RandomInts 10 10000 | java-introcs LocateBST 200.100.500000.in
+5497: [5363, 5543]
+5744: [5671, 5762]
+1155: [668, 1197]
+2150: between [1971, 2088] & [2231, 2384]
+7884: [7867, 7940]
+4999: [4946, 5356]
+3945: [3878, 4085]
+5165: [4946, 5356]
+1280: between [668, 1197] & [1339, 1354]
+1043: [668, 1197]
+
+Importante: seu programa deve ter complexidade de tempo esperado (tempo médio) linearítmico.
+
+Observação.  Para uma versão alternativa desse exercício (interessante do ponto de vista aplicado), veja
+
+https://www.ime.usp.br/~yoshi/2015i/mac323/html/exx/ex4.4.CE08.IntroCS2.html

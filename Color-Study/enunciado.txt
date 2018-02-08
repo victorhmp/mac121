@@ -1,0 +1,23 @@
+Variante do Creative Ex. 3.1.33 (Color study)
+
+Inicialmente, estude o Creative Exercise 3.1.33 (Color study) de IntroCS.
+
+http://introcs.cs.princeton.edu/java/31datatype/
+
+Escreva uma variante de ColorStudy.java, chamada ColorStudyH.java, que produz imagens como dadas abaixo.
+
+Nas imagens abaixo, os tons de cinza são como nas imagens geradas por ColorStudy.java. As cores são, naturalmente, diferentes. De fato, as cores dos vários Albers Squares que compõe as imagens são definidas pela distância dos respectivos quadrados ao canto inferior esquerdo. O usuário deve fornecer dois números entre 0.0 e 1.0, digamos h1 e h2. Esses números devem ser usados para definir a cor: por exemplo, o Albers square no canto inferior esquerdo deve ter "hue" h1 e o quadrado no canto superior direito deve ter "hue" h2. Para definir a cor (o "hue") da cor do Albers square na posição (i, j), use a distância sqrt(i*i + j*j) (faça interpolação linear entre h1 e h2).
+
+Use "saturation" e "brightness" iguais a 0.95f.
+
+Seu programa deve armazenar as imagens geradas em arquivos png. O nome do arquivo deve seguir o formato dos exemplos abaixo. Por exemplo, a imagem study-0.33-0.67.png foi gerada com a chamada
+
+$ java-introcs ColorStudyH .33 .67
+
+Para entender o padrão HSB e cores em geral, veja, por exemplo,
+
+http://www.tomjewett.com/colors/hsb.html
+
+Observação 1. Use getHSBColor(), como especificado em 
+
+https://docs.oracle.com/javase/8/docs/api/java/awt/Color.html#getHSBColor-float-float-float-

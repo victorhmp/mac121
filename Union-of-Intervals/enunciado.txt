@@ -1,0 +1,57 @@
+Web Exercise 4.2.1 (Union of intervals)
+
+Faça o Web Exercise 4.2.1, Union of Intervals:
+
+http://introcs.cs.princeton.edu/java/42sort/
+
+Seu programa deve chamar-se UnionOfIntervals.java. Seu programa deve receber os intervalos na entrada padrão, um intervalo por linha, cada intervalo dado pelo seu extremo esquerdo seguido de seu extremo direito. Por exemplo, o exemplo no enunciado poderia ser dado como segue:
+
+1.0 3.0
+2.0 4.5
+6.0 9.0
+7.0 8.0
+
+Por simplicidade, vamos supor que os intervalos da entrada serão intervalos contidos no intervalo [0, 1]. Obviamente, para verificar se seu programa funciona com o exemplo acima, você pode fornecer a entrada
+
+0.1 0.3
+0.2 0.45
+0.6 0.9
+0.7 0.8
+
+ao seu programa. Seu programa deve rodar em tempo O(N log N), onde N é o número de intervalos na entrada. Para experimentar seu programa com entradas grandes, você pode usar o programa RandomIntervals.java dado abaixo.
+
+Seu programa deve ter dois modos de execução. No modo "verboso", ele deve listar os intervalos que constituem a união dos intervalos dados, deve dizer quantos intervalos constituem a união (como abaixo), e deve também produzir uma janela com uma figura, como no exemplo anexo (example.png). Para especificar o modo "verboso", deve bastar o usuário dar um argumento (qualquer) na linha de comando:
+
+$ java-introcs UnionOfIntervals -v < example.in
+Total length: 0.65 [2 components]
+[0.1, 0.45]
+[0.6, 0.9]
+$
+
+Eis mais um exemplo (figura: 10-.3.png):
+
+$ java-introcs RandomIntervals 10 .3 | java-introcs UnionOfIntervals -v
+Total length: 0.8568688641521218 [4 components]
+[0.0571205820584273, 0.1852511913074326]
+[0.1977432917811649, 0.2704093683619381]
+[0.311752950577457, 0.4728488507946567]
+[0.47860686970953775, 0.9735831478146814]
+$
+
+No modo "não verboso" (sem um argumento na linha de comando), seu programa deve simplesmente dizer a soma dos comprimentos dos intervalos na união e deve dizer quantos intervalos constituem a união, como nos exemplos a seguir (seu programa não deve gerar figuras):
+
+$ java-introcs RandomIntervals 500000 .00001 | java-introcs UnionOfIntervals
+Total length: 0.9182605281611524 [40989 components]
+$ java-introcs RandomIntervals 500000 .001 | java-introcs UnionOfIntervals
+Total length: 0.9999506056788375 [1 component]
+$
+
+Observação. Você pode supor que seu programa será executado no modo verboso somente para uma quantidade não muito grande de intervalos; digamos, no máximo 60 intervalos.
+
+Importante: use a classe Interval1D.java para implementar seu programa. Veja
+
+http://algs4.cs.princeton.edu/code/javadoc/edu/princeton/cs/algs4/Interval1D.html
+
+e estude a implementação de Interval1D.java. Leia sobre Comparators em
+
+http://algs4.cs.princeton.edu/25applications/

@@ -1,0 +1,50 @@
+Multiple word search
+
+Faça o exercício de IntroCS do enunciado abaixo (Multiple word search). Seu programa deverá ter tempo de execução O(N log k) para um texto com N palavras. O valor de k poderá ser razoavelmente grande. As k palavras e o texto de N palavras deverão ser dados em arquivos. Seguem alguns detalhes de implementação.
+
+Seu programa deve chamar-se MWS.java. Ele deve receber o nome de dois arquivos como argumentos de linha de comando:
+
+$ java-introcs MWS <arquivo1> <arquivo2>
+
+onde <arquivo1> deve ser o arquivo com o texto de N palavras e <arquivo2> deve ser o arquivo com as k palavras. No modo acima, seu programa deve simplesmente enviar para a saída padrão o número de palavras em um menor segmento do texto que contém as k palavras. Se o usuário der mais um argumento, seu programa deve enviar para a saída padrão o segmento encontrado, com as palavras procuradas marcadas. Alguns exemplos de execução seguem.
+
+$ java-introcs MWS DATA/Gutenberg/tinyTale.txt 3.in
+Number of words in interval: 25
+$ java-introcs MWS DATA/Gutenberg/tinyTale.txt 3.in -v
+Number of words in interval: 25
+*foolishness*
+it *was* the epoch of belief it *was* the epoch of incredulity
+it *was* the season of light it *was* the season of *darkness*
+$ java-introcs MWS DATA/Gutenberg/tinyTale.txt 3b.in -v
+Number of words in interval: 5
+*was* the *season* of *darkness*
+$ java-introcs MWS DATA/Gutenberg/tinyTale.txt 4.in
+Set of words not in text: { apple, cake }
+
+Você deve testar seu programa para valores maiores de k. Para gerar listas mais longas de k palavras, você pode usar o programa ChooseWords.java abaixo.
+
+$ java-introcs ChooseWords 5 < DATA/Gutenberg/Braz_Cubas.txt > 5.in
+$ java-introcs MWS DATA/Gutenberg/Braz_Cubas.txt 5.in
+Number of words in interval: 33577
+$ java-introcs MWS DATA/Gutenberg/Braz_Cubas.txt 5.in -v > 5.out
+$ java-introcs ChooseWords 5000 < DATA/Gutenberg/Braz_Cubas.txt > 5000.in
+$ java-introcs MWS DATA/Gutenberg/Braz_Cubas.txt 5000.in -v > 5000.out
+
+Observação. Cópias locais de arquivos do projeto Gutenberg encontram-se em
+
+https://www.ime.usp.br/~yoshi/DATA/Gutenberg/
+
+Mais um exemplo de execução:
+
+$ java-introcs MWS DATA/Gutenberg/TaleOfTwoCities.txt 3c.in -v
+Number of words in interval: 25
+*best* of times,
+it was the worst of times,
+it was the age of wisdom,
+it was the age of *foolishness*,
+it was the *epoch*
+
+(Observe a pontuação.)
+
+Importante.  Não deixe de justificar brevemente por que seu programa tem complexidade de tempo O(N log k).
+

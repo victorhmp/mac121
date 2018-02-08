@@ -1,0 +1,9 @@
+Embaralhando listas ligadas
+
+Estude a implementação de fila Queue.java de S&W (abaixo). Essa implementação usa listas ligadas. Acrescente a essa classe um método de assinatura
+
+public void shuffle();
+
+que embaralha a fila uniformemente. Se q é uma fila com N elementos, a chamada q.shuffle() deve embaralhar esses N elementos de forma que todas as N! permutações sejam equiprováveis. Seu método deve rearranjar a lista ligada que representa a fila q alterando os links das células na lista ligada (isto é, as N células que compõe a lista ligada resultante devem ser as N células originais, mas com seus campos next reorganizados). Seu algoritmo deve ter complexidade de tempo linearítmico e deve gastar, no máximo, espaço adicional logarítmico. Sugestão: você poderia se inspirar no mergesort.
+
+Justifique brevemente por que seu algoritmo satisfaz as especificações nesse exercício. Note que você deve dizer por que o rearranjo obtido pela chamada q.shuffle() é uniforme (não privilegia nenhuma permutação), por que seu algoritmo é linearítmico, e por que seu algoritmo não gasta mais que espaço adicional logarítmico.

@@ -1,0 +1,21 @@
+Variante do Web Exercise 2.5.13 (Sorting with many duplicates)
+
+Este exercício é basicamente o Web Exercise 2.5.13 de Algs4 (Sorting with many duplicates):
+
+http://algs4.cs.princeton.edu/25applications/
+
+Estude os programas Driver.java e MyString.java abaixo. Em Driver.java, são chamados os métodos sort() de Merge.java e Quick.java, ambos de Algs4. Neste exercício, você deve escrever a classe DuplicateSort.java, contendo a função sort(), que faz O(n log t) comparações para ordenar um vetor de n elementos contendo no máximo t elementos distintos. Estamos interessados aqui no caso em que t é consideravelmente menor que n.
+
+A cota de O(n log t) deve valer para o pior caso (não basta valer para o caso médio).  Justifique brevemente por que seu algoritmo satisfaz essa exigência.
+
+Observações. (i) Se t = n, então seu programa deve fazer O(n log n) comparações, mas o tempo de execução pode ser quadrático em n.
+
+(ii) O programa Generate.java com parâmetros apropriados pode ser usado para gerar entradas com n grande e t pequeno. 
+
+(iii) Idealmente, sua função sort() em DuplicateSort.java deve ter a assinatura
+
+public static void sort(Comparable[] a)
+
+Por outro lado, se você achar mais fácil, sua função pode ter a assinatura
+
+public static void sort(MyString[] a)

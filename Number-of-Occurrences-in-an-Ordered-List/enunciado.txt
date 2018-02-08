@@ -1,0 +1,25 @@
+Número de ocorrências em lista ordenada
+
+Escreva um programa chamado CountOccurrences.java que determina o número de ocorrências de cada inteiro y_i de uma lista de M inteiros y_1, ... , y_M em uma lista ordenada de N inteiros x_1, ... , x_N. Suponha que a lista ordenada de inteiros x_1, ... , x_N esteja armazenada em um arquivo L.in e que a lista de "queries" y_1,...,y_M esteja armazenada em um arquivo Q.in. Seu programa será então executado da seguinte forma:
+
+$ java-introcs CountOccurrences L.in < Q.in > O.out
+
+Após a execução acima de seu programa, o arquivo O.out deve conter a lista de inteiros o_1, ... , o_M, onde o_i é o número de ocorrências de y_i na lista em L.in. Por exemplo, se fizermos
+
+$ java-introcs CountOccurrences 10_5s.in < 10_5.in > 10_5.out
+
+com os arquivos 10_5s.in e 10_5.in abaixo, devemos obter 10_5.out abaixo.
+
+Importante: seu programa deve necessariamente ter complexidade de tempo O(M log N) na parte relativa à determinação de o_1, ... , o_M.  Como é necessário ler os inteiros x_1, ... , x_N, a complexidade total de seu programa será O(N + M log N).
+
+Para gerar exemplos de entrada para seu programa, você pode usar o programa RandomInts.java abaixo. Exemplos de uso:
+
+$ java-introcs RandomInts 1000000 10000 -s > 1000000_10000s.in
+$ java-introcs RandomInts 1000000 10000 > 1000000_10000.in
+$ java-introcs RandomInts 1000000 10 -s > 1000000_10s.in
+$ java-introcs RandomInts 1000000 10 > 1000000_10.in
+
+Note que as seguintes duas execuções de seu programa devem ter tempos de execução semelhantes:
+
+$ java-introcs CountOccurrences 1000000_10000s.in < 1000000_10000.in > 1000000_10000.out
+$ java-introcs CountOccurrences 1000000_10s.in < 1000000_10.in > 1000000_10.out

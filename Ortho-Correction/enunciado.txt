@@ -1,0 +1,34 @@
+Verificador ortográfico
+
+Escreva um programa chamado Ortho.java que pode ser usado para fazer verificações ortográficas. Por exemplo, considere os arquivos
+
+https://www.ime.usp.br/~yoshi/DATA/Gutenberg/mobydick.txt
+https://www.ime.usp.br/~yoshi/DATA/500k_words
+
+O primeiro é um texto que usaremos como exemplo. O segundo é o "dicionário" que usaremos. A seguir, supomos que os arquivos acima estão no diretório onde estamos trabalhando.
+
+Suponha que executamos Ortho.java como segue:
+
+$ java-introcs Ortho 500k_words < mobydick.txt > moby_list.txt
+
+Nesse caso, o arquivo moby_list.txt deve passar a conter as palavras em mobydick.txt que não ocorrem em 500k_words (veja o arquivo moby_list.txt abaixo).
+
+Suponha agora que executamos Ortho.java como segue:
+
+$ java-introcs Ortho 500k_words -m < mobydick.txt > moby_marked.txt
+
+Nesse caso, o arquivo moby_marked.txt deve passar a conter o texto em mobydick.txt, com todas as palavras que não ocorrem em 500k_words "marcadas"; a palavra p marcada deve ocorrer como *p* (veja o arquivo moby_marked.txt abaixo).
+
+Considere também o arquivo 12tale.txt abaixo. Quando fazemos
+
+$ java-introcs Ortho ~/Documents/www/DATA/500k_words -m < 12tale.txt > tale_marked.txt
+
+o arquivo tale_marked.txt deve ser idêntico ao arquivo 12tale.txt (todas as palavras in 12tale.txt ocorrem em 500k_words).
+
+Observação 1. Aqui, interprete uma palavra como sendo um segmento maximal de letras.
+
+Observação 2. Se você não encontrar uma palavra p em 500k_words, pode ser que a versão de p com todas as letras minúsculas ocorra. Por exemplo, p = "It" não ocorre no dicionário, mas "it" ocorre. Assim, "It" deve ser considerado válido.
+
+Observação 3. O arquivo 500k_words está ordenado.
+
+Observação 4. Você deve usar busca binária para buscar as palavras no dicionário.

@@ -1,0 +1,33 @@
+Web Exercise 4.2.12 (Anagrams)
+
+Faça o Web Exercise 4.2.12, Anagrams, de Introcs:
+
+http://introcs.cs.princeton.edu/java/42sort/
+
+Seu programa deve chamar-se Anagrams.java. A entrada de seu programa será uma lista de palavras, dada na entrada padrão. Por exemplo, a entrada poderia ser a lista de palavras no arquivo exemplo.in (abaixo):
+
+$ java-introcs Anagrams < exemplo.in
+* aboard abroad
+* ascent secant stance
+$
+
+Note que cada linha da saída, que começa com '*', contém conjuntos de anagramas. A palavra "starch", que ocorre em exemplo.in mas não tem anagrama em exemplo.in, não aparece na saída.
+
+Seu programa deve ter complexidade O(N log N), onde N é o número de palavras na entrada. Você pode verificar seu programa com as entradas
+
+https://www.ime.usp.br/~yoshi/DATA/5+6_letter_words/words5.txt
+https://www.ime.usp.br/~yoshi/DATA/5+6_letter_words/words6.txt
+https://www.ime.usp.br/~yoshi/DATA/500k_words
+https://www.ime.usp.br/~yoshi/DATA/Pwords
+
+As saídas correspondentes aos arquivos words5.txt e Pwords seguem abaixo.
+
+Observação. Você pode supor que as entradas de seu programa serão tais que não haverá mais de, digamos, 100 palavras que são anagramas entre si, isto é, cada linha de sua saída não terá mais de 100 palavras.
+
+Mais uma observação: executando seu programa nas palavras em 500k_words, a saída deverá conter, por exemplo, as linhas
+
+* actuator's autocrat's
+* aspirant's partisan's
+* alumna's manual's
+* self-catering self-creating self-reacting
+* Anglo-chinese shoe-cleaning

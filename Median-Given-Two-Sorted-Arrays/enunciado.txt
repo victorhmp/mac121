@@ -1,0 +1,15 @@
+Web Exercise 2.5.23 (Median given two sorted arrays)
+
+Faça o Web Exercise 2.5.23 de Algs4 (Median given two sorted arrays):
+
+http://algs4.cs.princeton.edu/25applications/
+
+Você deve escrever uma classe chamada Median2Sorted.java que implementa uma função com assinatura
+
+public static Comparable select(Comparable[] a, Comparable[] b, int k)
+
+Esta função recebe dois vetores a e b ordenados (de forma crescente) e devolve o elemento "de posto k" da união dos dois vetores. Em outras palavras, se o vetor c contém todos os elementos de a e todos os elementos de b, e c está ordenado, então queremos o elemento c[k]. Ademais, queremos que a função acima tenha complexidade de tempo de pior caso O(log N), onde N = a.length + b.length.
+
+Para testar sua função, você pode usar o programa Driver.java abaixo. Entradas para Driver.java podem ser geradas com o programa Generator2.java (também abaixo).  Seu programa será testado com o programa Driver.java (entre outros).
+
+Justifique brevemente por que seu algoritmo tem complexidade de tempo de pior caso O(log N).

@@ -1,0 +1,25 @@
+Manchetes
+
+Escreva um programa chamado EstadaoHeadlines.java que imprime os títulos das matérias na página
+
+http://www.estadao.com.br
+
+Por exemplo, executado hoje, este programa deve gerar a saída saida.txt abaixo.
+
+Para encontrar os títulos a serem impressos, procure "headlines" de nível 3 (<h3...>...</h3>).  (Em outras palavras, seu programa será considerado correto se ele imprimir esses "headlines" de nível 3.  O arquivo Estadao.html abaixo é a fonte HTML que o programa encontrou na URL acima, e saida.txt são os "headlines" que o programa extraiu.)
+
+Para transformar caracteres expressos "no formato HTML" para utf-8, use unescapeHtml4 da classe StringEscapeUtils. Para usar essa classe, você terá de instalar o arquivo commons-lang3-3.4.jar em seu sistema.
+
+https://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/StringEscapeUtils.html
+
+Para ter acesso aos métodos em StringEscapeUtils, você deve dizer 
+
+import org.apache.commons.lang3.StringEscapeUtils;
+
+em seu programa.  Além disso, commons-lang3-3.4.jar deve estar acessível ao seu programa.  Se você usa DrJava, você deve instalar commons-lang3-3.4.jar no sistema: 
+
+https://www.seas.upenn.edu/~cis1xx/resources/java/jar/jarindrjava.html
+
+Se você usa javac e java na linha de comando, você pode usar a opção -cp.  O arquivo install.txt diz como modificar java-introcs e javac-introcs para incorporar commons-lang3-3.4.jar.
+
+O programa HTMLsource.java abaixo ilustra o uso da função StringEscapeUtils.unescapeHtml4().

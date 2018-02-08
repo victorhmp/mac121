@@ -1,0 +1,91 @@
+Caching ótimo
+
+Neste exercício, você vai estudar um problema da área de caching. O problema está descrito na parte inicial da Seção 4.3, Optimal Caching: A More Complex Exchange Argument, de Kleinberg e Tardos:
+
+Algorithm Design
+Jon Kleinberg e Eva Tardos
+https://github.com/haseebr/competitive-programming/blob/master/Materials/Algorithm%20Design%20by%20Jon%20Kleinberg%2C%20Eva%20Tardos.pdf
+
+As páginas relevantes estão abaixo. O problema é introduzido e discutido nas páginas 131--133. Como você pode ver na subseção Designing and Analyzing the Algorithm, há um algoritmo simples e natural para se resolver o problema de caching, no caso em que a sequência d_1, d_2, ... é conhecida. Este algoritmo é conhecido como algoritmo de Bélády. Veja também
+
+https://en.wikipedia.org/wiki/Cache_replacement_policies#B.C3.A9l.C3.A1dy.27s_Algorithm
+
+O algoritmo de Bélády é um exemplo de algoritmo ganancioso (também chamado guloso ou míope; greedy, em inglês). Não é um "tenta-tudo" ou backtracking. Não é necessário você entender, nesse momento, a prova da correção desse algoritmo. (Você verá outros exemplos de algoritmos gananciosos em, por exemplo, Algoritmos e estruturas de dados II e Análise de algoritmos, com prova de correção.) Neste exercício, você deve implementar o algoritmo de Bélády. Os detalhes de implementação são como segue.
+
+Seu programa deve chamar-se Clairvoyant.java. A execução abaixo ilustra como resolver o exemplo em
+
+https://en.wikipedia.org/wiki/Cache_replacement_policies#B.C3.A9l.C3.A1dy.27s_Algorithm
+
+$ cat wiki.in
+5 0 1 2 0 3 1 2 5 2
+$ java-introcs Clairvoyant 3 -v < wiki.in
+5: +5
+0: +0
+1: +1
+2: -5/+2
+0: in cache
+3: -0/+3
+1: in cache
+2: in cache
+5: -3/+5
+2: in cache
+Number of cache misses: 6
+$ java-introcs Clairvoyant 3 < wiki.in
+Number of cache misses: 6
+
+A opção "-v" especifica que queremos uma saída completa, enquanto que sem "-v" seu programa deve dizer apenas quantos cache misses aconteceram. O formato da saída com "-v" deve ser como acima (o formato é auto-explicativo). Seguem mais alguns outros exemplos de execução.
+
+$ java-introcs Generator 20 1 ABCDE > 20.1.5.in
+$ java-introcs Clairvoyant 3 -v < 20.1.5.in > 20.1.5.out
+$ java-introcs Generator 20 4 ab > 20.4.2.in
+$ java-introcs Clairvoyant 3 -v < 20.4.2.in > 20.4.2.out
+
+(arquivos 20.* seguem abaixo).
+
+$ java-introcs Generator 1000000 4 abcdefghi > 1000000.4.9.in
+$ time java-introcs Clairvoyant 1000 < 1000000.4.9.in
+Number of cache misses: 506742
+
+real 0m3.456s
+user 0m4.787s
+sys 0m0.183s
+$ java-introcs Generator 5000000 5 abcdefghi > 5000000.5.9.in
+$ time java-introcs Clairvoyant 10000 < 5000000.5.9.in
+Number of cache misses: 2404291
+
+real 0m32.204s
+user 0m41.695s
+sys 0m1.871s
+$ java-introcs Generator 10000000 5 abcdefghi > 10000000.5.9.in
+$ time java-introcs Clairvoyant 1000 < 10000000.5.9.in
+Number of cache misses: 8239256
+
+real 0m57.077s
+user 1m25.644s
+sys 0m2.361s
+$ time java-introcs Clairvoyant 10000 < 10000000.5.9.in
+Number of cache misses: 4799448
+
+real 1m4.593s
+user 1m32.298s
+sys 0m2.280s
+$ time java-introcs Clairvoyant 100000 < 10000000.5.9.in
+Number of cache misses: 59049
+
+real 0m57.547s
+user 1m20.533s
+sys 0m1.284s
+
+(Naturalmente, os tempos acima dependem fortemente da máquina específica sendo usada.)
+
+Sejam
+
+N: número total de d_i (a sequência seria d_1, ..., d_N)
+m: tamanho do cache
+n: número de d_i distintos na sequência
+
+Sua implementação deve ter complexidade O(N(log n + log m)). Para obter esta complexidade, você deve usar uma fila de prioridade (além de objetos de outros tipos que temos estudado). Na verdade, você achará conveniente usar uma fila de prioridade "indexada": use a classe IndexMaxPQ.java de S&W. Veja o arquivo PDF abaixo e veja a parte relevante de
+
+https://algs4.cs.princeton.edu/24pq/
+
+Observação.  Argumente sucintamente por que sua implementação tem a complexidade requisitada.

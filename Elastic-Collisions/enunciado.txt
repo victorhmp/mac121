@@ -1,0 +1,58 @@
+Variante do Web Exercise 1.5.39 (Elastic collisions)
+
+Inicialmente, estude BouncingBall.java em
+
+http://introcs.cs.princeton.edu/java/15inout/
+
+Uma versão orientada a objetos de BouncingBall.java, que também simula um número variável de bolas, aparece em
+
+http://introcs.cs.princeton.edu/java/34nbody/
+
+Programas associados (abaixo): Ball.java e BouncingBalls.java
+
+Estude também Vector.java, dado em
+
+http://introcs.cs.princeton.edu/java/34nbody/
+
+Estude agora o Web Exercise 1.5.39, Elastic collisions, de IntroCS:
+
+http://introcs.cs.princeton.edu/java/15inout/
+
+Uma solução encontra-se abaixo (CollidingBalls.java). Esta solução não é orientada a objetos (OO). Neste exercício, você deve escrever uma solução OO. Na verdade, o cliente CollidingBallsOO.java já é dado abaixo. O exercício consiste em você escrever ColoredBallOO.java, que implementa o tipo abstrato ColoredBallOO.
+
+Para escrever ColoredBallOO.java, você deve se basear em ColoredBall.java. Você deve reformular ColoredBall.java da seguinte forma.
+
+1. Use objetos do tipo Vector para a posição e velocidade da bola (serão dois objetos do tipo Vector e não 4 doubles).
+2. Implemente um construtor com assinatura
+
+public ColoredBallOO(Vector p, Vector v, double r, Color c)
+
+que permite criar uma bola na posição p, com velocidade v, raio r e cor r.
+
+3. Implemente os métodos a seguir:
+
+public Vector pos()
+public Vector vel()
+public double radius()
+public void setVel(Vector v)
+
+Os três primeiros devem devolver a posição, a velocidade e o raio da bola. O último deve atribuir o valor v para a velocidade da bola.
+
+4. Implemente também os seguintes métodos
+
+public void updatePosition(double dt)
+public void treatWalls(double size, double dt)
+public void move(double size, double dt)
+public void draw()
+
+O método updatePosition() deve atualizar a posição da bola para a posição p + dt * v, onde p é a posição atual da bola e v é a velocidade atual da bola (assim, p + dt * v é onde a bola estará depois de dt unidades de tempo).
+
+O método treatWalls() deve fazer o seguinte. Determine a posição q da bola depois de dt unidades de tempo. Se a bola na posição q não estiver contida inteiramente no quadrado [0, size] x [0, size], então a velocidade da bola deve ser alterada, da mesma forma que isso é feito em ColoredBall.java (ou BouncingBall.java). (Se a bola baterá nas paredes horizontais depois de dt unidades de tempo, a componente x da velocidade deve ter seu sinal trocado etc.)
+
+O método move() deve fazer uma chamada apropriada de treatWalls(), seguida de uma chamada apropriada de updatePosition().  O método draw deve desenhar a bola na janela do StdDraw.
+
+Observações
+
+1. Basta entregar a classe ColoredBallOO.java. Ela será testada com o cliente CollidingBallsOO.java.
+
+2. Note que a classe Vector.java não deve ser alterada.

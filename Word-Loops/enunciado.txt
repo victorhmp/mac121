@@ -1,0 +1,39 @@
+Word loops
+
+Estude inicialmente o Creative Exercise 4.5.35, Word ladder, de IntroCS:
+
+https://introcs.cs.princeton.edu/java/45graph/
+
+Neste exercício, você deve escrever um programa, chamado WordLoop.java, que encontra word loops, como os seguintes:
+
+1. apple ample amply apply apple
+2. print paint point print
+3. mouse douse house horse gorse goose loose louse lousy lossy mossy mousy mouse
+
+Um word loop é como um word ladder que começa e termina na mesma palavra e que tem pelo menos três palavras distintas ("abuse amuse abuse" não é um word loop).  A menos do fato de word loops terem de conter pelo menos três palavras distintas, não há restrições quanto ao seu comprimento (ao contrário de word ladders, que queremos que sejam curtas).  Observe que, em um word loop, a menos da primeira palavra que é igual à última, não há palavras repetidas.
+
+Seu programa deve receber as "palavras válidas" em arquivos como words5.txt e words6.txt no enunciado do Creative Exercise 4.5.35. (Note que arquivos de teste semelhantes podem ser gerados com Generator.java.) Você pode supor que seu programa será executado com arquivos de no máximo 100.000 palavras (cem mil palavras). O nome do arquivo contendo as palavras válidas para se montar os word loops será dado ao seu programa como argumento de linha de comando.
+
+Seu programa deve ler uma sequência da palavras da entrada padrão, e deve encontrar e imprimir um word loop para cada uma das palavras dadas. No caso de não haver um word loop contendo uma palavra dada, seu programa deve imprimir uma mensagem adequada.
+
+Observação. Seu programa deve ser, necessariamente, baseado em busca em profundidade. Você pode achar instrutivo estudar partes relevantes de
+
+https://algs4.cs.princeton.edu/41graph/
+
+Alguns exemplos de execução seguem:
+
+$ java-introcs WordLoop words5.txt < 5.in > 5.out
+$ java-introcs WordLoop words6.txt < 6.in > 6.out
+
+$ java-introcs Generator 50000 10 abcd > 50000.10.4.in
+$ java-introcs WordLoop 50000.10.4.in < 50000.in > 50000.10.4.out
+
+$ java-introcs Generator 100000 9 abcde > 100000.9.5.in
+$ java-introcs -Xss50m WordLoop 100000.9.5.in < 100000.in > 100000.9.5.out
+
+$ java-introcs FilterByLength 6 < Pwords > words6p.txt
+$ java-introcs -Xss50m WordLoop words6p.txt < words6p.in > words6p.out
+
+Arquivo Pwords: https://www.ime.usp.br/~yoshi/DATA/Pwords
+
+Observação. Você pode achar interessante usar o programa WordCC.java (anexo) para estudar os grafos envolvidos nesse exercício.
